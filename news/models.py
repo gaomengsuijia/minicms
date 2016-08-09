@@ -13,6 +13,12 @@ class Column(models.Model):
     slug = models.CharField('栏目网址', max_length=256, db_index=True)
     intro = models.TextField('栏目简介', default='')
 
+    #控制是否导航显示
+    nav_display = models.BooleanField('导航显示', default=False)
+
+    #控制是否在首页显示
+    home_display = models.BooleanField('首页显示',default=False)
+
     #得到网址
     def get_absolute_url(self):
         return reverse('column', args=(self.slug,))
@@ -48,7 +54,7 @@ class Article(models.Model):
      #得到网址
      
     def get_absolute_url(self):
-        return reverse('article', args=(self.slug,))
+        return reverse('article', args=(self.pk,self.slug,))
  
     def __str__(self):
         return self.title
