@@ -6,7 +6,8 @@ from django.utils.encoding import python_2_unicode_compatible
 from DjangoUeditor.models import UEditorField
 from django.core.urlresolvers import reverse
 
- 
+
+#栏目模型对象 
 @python_2_unicode_compatible
 class Column(models.Model):
     name = models.CharField('栏目名称', max_length=256)
@@ -31,7 +32,7 @@ class Column(models.Model):
         verbose_name_plural = '栏目'    #如果模型是复数的显示名称，不指定的话，默认会加上s
         ordering = ['name']  # 按照哪个栏目排序
  
- 
+ #文章模型对象
 @python_2_unicode_compatible
 class Article(models.Model):
     column = models.ManyToManyField(Column, verbose_name='归属栏目')
@@ -62,3 +63,20 @@ class Article(models.Model):
     class Meta:
         verbose_name = '教程'
         verbose_name_plural = '教程'
+
+
+@python_2_unicode_compatible
+    #用户表模型
+class Users(models.Model):
+    """用户表模型"""
+    username = models.CharField('用户名',max_length=255)
+    password = models.CharField('用户密码',max_length=255)
+
+    def __str__(self):
+        return self.username
+
+
+    class Meta:
+        verbose_name = '用户管理'
+        verbose_name_plural = '用户管理'
+            

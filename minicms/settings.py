@@ -113,7 +113,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     'django.core.context_processors.tz',
     'django.contrib.messages.context_processors.messages',
-    'news.nav_processor.nav_column',  # 新加入的这一行
+    'news.nav_processor.nav_column',  # 新加入的这一行，表示将nav_processor文件下的nav_column这个渲染器加入到配置中来，使该变量在多个模板中使用
 )
 
 
