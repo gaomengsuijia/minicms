@@ -38,8 +38,13 @@
          <span></span>
          <span></span>
          </button> 
-         <span><a href="/">我的博客</a></span>
-         <span><a href='/login' target = '_blank'>登录</a></span>
+         <span><a href="/">我的博客 </a></span>
+         {% if username %}
+         <span><a href='/' target = '_blank'>{{username}}</a></span>
+         <span><a href='/logout' target = '_blank'> 退出</a></span>
+         {% else %}
+         <span><a href='/zhuce' target = '_blank'>登录</a></span>
+         {% endif %}
       </div>
  
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

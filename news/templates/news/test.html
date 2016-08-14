@@ -1,0 +1,23 @@
+<html>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>注册(Login)</title>
+
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <h1>注册(Login) MyBlog</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{loginform.as_p}}
+                <button type="submit" class="submit_button">注册</button>
+            </form>
+    </body>
+</html>
+

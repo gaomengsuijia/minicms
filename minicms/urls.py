@@ -15,6 +15,11 @@ urlpatterns = patterns('',
     url(r'^news/(?P<pk>\d+)/(?P<article_slug>[^/]+)/$', 'news.views.article_detail', name='article'),
     url(r'^login/$', 'news.views.login', name='login'),
     url(r'^register/$', 'news.views.register', name='register'),
+    url(r'^test/$','news.views.logintest'),
+    url(r'^zhuce/$','news.views.zhuce'),
+    url(r'^logout/$','news.views.logout'),
+    
+
 )
 
 

@@ -71,6 +71,7 @@ class Users(models.Model):
     """用户表模型"""
     username = models.CharField('用户名',max_length=255)
     password = models.CharField('用户密码',max_length=255)
+    headimg = models.FileField(upload_to='./upload')
 
     def __str__(self):
         return self.username

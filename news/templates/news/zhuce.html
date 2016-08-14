@@ -1,0 +1,23 @@
+<html>
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>登录(Login)</title>
+
+    </head>
+
+    <body>
+
+        <div class="page-container">
+            <h1>登录(Login) MyBlog</h1>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{zhuce.as_p}}
+                <button type="submit" class="submit_button">登录</button>
+            </form>
+    </body>
+</html>
+
