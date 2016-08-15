@@ -136,20 +136,13 @@ def zhuce(request):
 		zhuce = Zhuce()
 	return render_to_response('news/zhuce.html',{'zhuce':zhuce})
 
+	
+#登出视图
+
 def logout(request):
 	res = HttpResponseRedirect('/')
 	res.delete_cookie('username')
 	return res
-
-
-
-
-
-
-
-
-
-
 
 
 
