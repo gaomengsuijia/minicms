@@ -9,10 +9,10 @@ class Loginform(forms.Form):
 
 
 
-#注册zhuce
+#登录
 class Zhuce(forms.Form):
-	username = forms.CharField()
-	password = forms.CharField(widget = forms.PasswordInput)
+	username = forms.CharField(error_messages={"required":"用户名不能为空"})
+	password = forms.CharField(widget = forms.PasswordInput,error_messages={"required":"密码不能为空"})
 
 
 

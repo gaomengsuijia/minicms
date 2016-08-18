@@ -3,6 +3,7 @@ from django.shortcuts import render,render_to_response
 from django.http import HttpResponse,HttpResponseRedirect
 from .models import Column,Article,Users
 from .forms import Loginform,Zhuce
+import json
 # Create your views here.
 
 #首页
@@ -10,6 +11,7 @@ def index(request):
 
     home_display_columns = Column.objects.filter(home_display=True)
     nav_display_columns = Column.objects.filter(nav_display=True)
+
     #获取登录cookie
     username = request.COOKIES.get('username','')
     
@@ -35,7 +37,7 @@ def article_detail(request,pk,article_slug):
 		return redirect(article, permanent=True)
 
 	return render(request, 'news/article.html', {'article': article})
-
+  
 
 #登录视图
 def login(request):
@@ -127,6 +129,7 @@ def zhuce(request):
 			result = Users.objects.filter(username__exact=username,password__exact=password)
 			if result:
 				res = HttpResponseRedirect('/')
+				#保存cookie到本地浏览器
 				res.set_cookie('username',username,3600)
 				return res
 			else:
@@ -145,6 +148,11 @@ def logout(request):
 	return res
 
 
+#测试向js中传递数据
+
+def testjs(request):
+	dict_js = {'name':'lily','age':50}
+	return render_to_response('news/jstest.html',{'dict_js':json.dumps(dict_js)})
 
 
 

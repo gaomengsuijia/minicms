@@ -18,8 +18,8 @@ urlpatterns = patterns('',
     url(r'^test/$','news.views.logintest'),
     url(r'^zhuce/$','news.views.zhuce'),
     url(r'^logout/$','news.views.logout'),
+    url(r'^testjs/$','news.views.testjs'),
     
-
 )
 
 
